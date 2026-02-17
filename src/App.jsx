@@ -161,7 +161,7 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", maxWidth: 860, margin: "0 auto", padding: 16, background: "#F9FAFB", minHeight: "100vh" }}>
-      <div style={{ background: "linear-gradient(135deg, #1E3A5F, #2D5F8A)", borderRadius: 12, padding: "24px 28px", marginBottom: 20, color: "white" }}>
+      <div style={{ background: "linear-gradient(135deg, #5A2FBA, #7C3AED)", borderRadius: 12, padding: "24px 28px", marginBottom: 20, color: "white" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ fontSize: 28 }}>{"\u{1F4C5}"}</span>
           <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>Dripjobs Team Cultural Calendar 2026</h1>
@@ -322,7 +322,7 @@ export default function App() {
       <div style={{ marginTop: 16, background: "linear-gradient(135deg, #F0FDF4, #ECFDF5)", borderRadius: 10, padding: 16, border: "1px solid #BBF7D0" }}>
         <h3 style={{ margin: "0 0 8px", fontSize: 14, fontWeight: 700, color: "#166534" }}>{"\u{262A}\u{FE0F}"} Ramadan Awareness (approx. Feb 18 - Mar 20, 2026)</h3>
         <p style={{ margin: 0, fontSize: 13, color: "#15803D", lineHeight: 1.6 }}>
-          During Ramadan, your Pakistan dev team (Ali Raza, Abdul Basit, Ammad Islam, Adnan Ahmed) and Nigeria team member will be fasting dawn to sunset.
+          During Ramadan, your Pakistan dev team and Nigeria team member will be fasting dawn to sunset.
           Consider scheduling meetings outside fasting hours, being flexible on response times, and sending a warm acknowledgment.
         </p>
       </div>
