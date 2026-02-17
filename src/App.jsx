@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const holidays = [
-  { date: "2026-01-01", name: "New Year's Day", countries: ["US","CO","MX","BO","PE","NG","PK"], type: "public", note: "Global celebration — great moment for an all-team message" },
+  { date: "2026-01-01", name: "New Year's Day", countries: ["US","CO","MX","BO","PE","PK","PH","NG","JM"], type: "public", note: "Global celebration — great moment for an all-team message" },
   { date: "2026-01-06", name: "Epiphany / Three Kings Day", countries: ["CO","BO","PE"], type: "public", note: "Día de Reyes — important gift-giving tradition in Latin America" },
   { date: "2026-01-12", name: "Epiphany Holiday (observed)", countries: ["CO"], type: "public", note: "Moved to Monday under Colombia's Emiliani Law" },
   { date: "2026-01-19", name: "Martin Luther King Jr. Day", countries: ["US"], type: "public", note: "US federal holiday" },
@@ -12,25 +12,28 @@ const holidays = [
   { date: "2026-02-16", name: "Carnival Monday", countries: ["BO"], type: "public", note: "Carnival celebrations — major cultural event in Bolivia" },
   { date: "2026-02-17", name: "Shrove Tuesday / Martes de Ch'alla", countries: ["BO"], type: "public", note: "Bolivian tradition of blessing homes and businesses for abundance — Pachamama offering" },
   { date: "2026-02-18", name: "Ramadan Begins (approx.)", countries: ["PK","NG"], type: "cultural", note: "Holy month of fasting — be mindful of meeting times and energy levels. Dates subject to moon sighting." },
+  { date: "2026-02-25", name: "EDSA People Power Revolution", countries: ["PH"], type: "public", note: "Celebrates the 1986 People Power Revolution that restored democracy in the Philippines" },
   { date: "2026-03-16", name: "Benito Juarez Birthday", countries: ["MX"], type: "public", note: "Mexican national holiday honoring President Juarez" },
   { date: "2026-03-19", name: "Father's Day (Bolivia)", countries: ["BO"], type: "cultural", note: "Bolivia celebrates Father's Day on St. Joseph's Day" },
-  { date: "2026-03-20", name: "Eid al-Fitr (approx. Day 1)", countries: ["PK","NG"], type: "public", note: "End of Ramadan — major celebration! 3 days off in Pakistan. Greet with Eid Mubarak! Subject to moon sighting." },
+  { date: "2026-03-20", name: "Eid al-Fitr (approx. Day 1)", countries: ["PK","PH","NG"], type: "public", note: "End of Ramadan — major celebration! 3 days off in Pakistan. Also a public holiday in the Philippines. Greet with Eid Mubarak! Subject to moon sighting." },
   { date: "2026-03-21", name: "Eid al-Fitr Day 2", countries: ["PK","NG"], type: "public", note: "Eid celebrations continue" },
   { date: "2026-03-22", name: "Eid al-Fitr Day 3", countries: ["PK"], type: "public", note: "Third day of Eid in Pakistan" },
   { date: "2026-03-23", name: "Pakistan Day / Saint Joseph's Day (CO)", countries: ["PK","CO"], type: "public", note: "Celebrates Lahore Resolution in Pakistan; Saint Joseph's Day observed in Colombia" },
-  { date: "2026-04-02", name: "Maundy Thursday", countries: ["CO","BO","PE"], type: "public", note: "Beginning of Easter/Holy Week — many LatAm team members take extended time" },
-  { date: "2026-04-03", name: "Good Friday", countries: ["CO","BO","PE","NG"], type: "public", note: "Public holiday across LatAm and Nigeria. Holy Week is major in Colombia." },
-  { date: "2026-04-06", name: "Easter Monday", countries: ["NG"], type: "public", note: "Nigeria public holiday" },
-  { date: "2026-05-01", name: "Labor Day / Workers' Day", countries: ["CO","MX","BO","PE","PK","NG"], type: "public", note: "International Workers Day — observed in ALL Dripjobs countries except US" },
+  { date: "2026-04-02", name: "Maundy Thursday", countries: ["CO","BO","PE","PH"], type: "public", note: "Beginning of Easter/Holy Week — many LatAm and Filipino team members take extended time" },
+  { date: "2026-04-03", name: "Good Friday", countries: ["CO","BO","PE","PH","NG","JM"], type: "public", note: "Public holiday across LatAm, Philippines, Nigeria, and Jamaica. Holy Week is major in Colombia and the Philippines." },
+  { date: "2026-04-06", name: "Easter Monday", countries: ["NG","JM"], type: "public", note: "Nigeria and Jamaica public holiday" },
+  { date: "2026-04-09", name: "Araw ng Kagitingan (Day of Valor)", countries: ["PH"], type: "public", note: "Philippines national holiday honoring the bravery of Filipino soldiers in WWII" },
+  { date: "2026-05-01", name: "Labor Day / Workers' Day", countries: ["CO","MX","BO","PE","PK","PH","NG"], type: "public", note: "International Workers Day — observed in most Dripjobs countries except US and Jamaica" },
   { date: "2026-05-10", name: "Mother's Day (Mexico)", countries: ["MX"], type: "cultural", note: "Very important in Mexican culture — always May 10" },
   { date: "2026-05-18", name: "Ascension Day Holiday", countries: ["CO"], type: "public", note: "Colombia public holiday (moved to Monday)" },
+  { date: "2026-05-23", name: "Labour Day (Jamaica)", countries: ["JM"], type: "public", note: "Jamaica's National Labour Day — a day for community service and national pride" },
   { date: "2026-05-25", name: "Memorial Day", countries: ["US"], type: "public", note: "US federal holiday" },
-  { date: "2026-05-27", name: "Eid al-Adha (approx.) / Mother's Day (BO)", countries: ["PK","NG","BO"], type: "public", note: "Festival of Sacrifice — 3 days in Pakistan. Bolivia celebrates Mothers Day. Greet with Eid Mubarak! Subject to moon sighting." },
+  { date: "2026-05-27", name: "Eid al-Adha (approx.) / Mother's Day (BO)", countries: ["PK","PH","NG","BO"], type: "public", note: "Festival of Sacrifice — 3 days in Pakistan. Also a public holiday in the Philippines. Bolivia celebrates Mothers Day. Greet with Eid Mubarak! Subject to moon sighting." },
   { date: "2026-05-28", name: "Eid al-Adha Day 2", countries: ["PK","NG"], type: "public", note: "Eid al-Adha celebrations continue" },
   { date: "2026-05-29", name: "Eid al-Adha Day 3", countries: ["PK"], type: "public", note: "Third day of Eid in Pakistan" },
   { date: "2026-06-04", name: "Corpus Christi", countries: ["CO","BO"], type: "public", note: "Catholic holiday observed in Colombia and Bolivia" },
   { date: "2026-06-07", name: "Battle of Arica / Flag Day", countries: ["PE"], type: "public", note: "Peru national holiday" },
-  { date: "2026-06-12", name: "Democracy Day", countries: ["NG"], type: "public", note: "Nigeria national holiday celebrating return to democracy" },
+  { date: "2026-06-12", name: "Independence Day (PH) / Democracy Day (NG)", countries: ["PH","NG"], type: "public", note: "Philippines celebrates independence from Spain in 1898; Nigeria celebrates return to democracy" },
   { date: "2026-06-15", name: "Sacred Heart", countries: ["CO"], type: "public", note: "Colombia public holiday" },
   { date: "2026-06-21", name: "Aymara New Year", countries: ["BO"], type: "public", note: "Indigenous Andean celebration of the winter solstice — culturally significant" },
   { date: "2026-06-24", name: "Ashura Day 1 (approx.)", countries: ["PK"], type: "public", note: "Day of mourning and remembrance in Islam. Subject to moon sighting." },
@@ -41,33 +44,39 @@ const holidays = [
   { date: "2026-07-23", name: "Peruvian Air Force Day", countries: ["PE"], type: "public", note: "Peru national holiday" },
   { date: "2026-07-28", name: "Independence Day (Peru)", countries: ["PE"], type: "public", note: "Fiestas Patrias — typically 2-day celebration (Jul 28-29)" },
   { date: "2026-07-29", name: "Independence Day Day 2 (Peru)", countries: ["PE"], type: "public", note: "Second day of Peru independence celebration" },
-  { date: "2026-08-06", name: "Independence Day (BO) / Battle of Junin (PE)", countries: ["PE","BO"], type: "public", note: "Bolivia Independence Day and Peru Battle of Junin" },
+  { date: "2026-08-01", name: "Emancipation Day (Jamaica)", countries: ["JM"], type: "public", note: "Celebrates the emancipation of enslaved people in Jamaica in 1838" },
+  { date: "2026-08-06", name: "Independence Day (BO, JM) / Battle of Junin (PE)", countries: ["PE","BO","JM"], type: "public", note: "Bolivia Independence Day, Jamaica Independence Day, and Peru Battle of Junin" },
   { date: "2026-08-07", name: "Battle of Boyaca", countries: ["CO"], type: "public", note: "Colombia national holiday" },
   { date: "2026-08-14", name: "Independence Day (Pakistan)", countries: ["PK"], type: "public", note: "Major national holiday — expect all Pakistan team members off" },
   { date: "2026-08-17", name: "Assumption of Mary (observed)", countries: ["CO"], type: "public", note: "Colombia public holiday (moved to Monday)" },
+  { date: "2026-08-21", name: "Ninoy Aquino Day", countries: ["PH"], type: "public", note: "Philippines national holiday honoring Senator Benigno 'Ninoy' Aquino Jr." },
   { date: "2026-08-25", name: "Eid Milad-un-Nabi (approx.)", countries: ["PK","NG"], type: "public", note: "Birthday of Prophet Muhammad — public holiday in Pakistan and Nigeria. Subject to moon sighting." },
   { date: "2026-08-30", name: "Santa Rosa de Lima", countries: ["PE"], type: "public", note: "Peru national holiday" },
+  { date: "2026-08-31", name: "National Heroes Day (Philippines)", countries: ["PH"], type: "public", note: "Philippines national holiday honoring all Filipino heroes" },
   { date: "2026-09-07", name: "Labor Day (US)", countries: ["US"], type: "public", note: "US federal holiday" },
   { date: "2026-09-16", name: "Independence Day (Mexico)", countries: ["MX"], type: "public", note: "Grito de Independencia — Mexico biggest national holiday!" },
   { date: "2026-10-01", name: "National Day (Nigeria)", countries: ["NG"], type: "public", note: "Nigeria Independence Day" },
   { date: "2026-10-08", name: "Battle of Angamos", countries: ["PE"], type: "public", note: "Peru national holiday" },
   { date: "2026-10-12", name: "Columbus Day / Dia de la Raza", countries: ["US","CO"], type: "public", note: "US federal holiday; Colombia celebrates as Dia de la Raza" },
-  { date: "2026-11-01", name: "All Saints' Day", countries: ["CO","PE"], type: "public", note: "Public holiday in Colombia and Peru" },
+  { date: "2026-10-19", name: "National Heroes Day (Jamaica)", countries: ["JM"], type: "public", note: "Jamaica national holiday honoring seven National Heroes including Marcus Garvey and Nanny of the Maroons" },
+  { date: "2026-11-01", name: "All Saints' Day", countries: ["CO","PE","PH"], type: "public", note: "Public holiday in Colombia, Peru, and the Philippines" },
   { date: "2026-11-02", name: "Dia de los Muertos", countries: ["MX","BO"], type: "cultural", note: "Day of the Dead — deeply important Mexican tradition honoring deceased loved ones" },
   { date: "2026-11-09", name: "Iqbal Day", countries: ["PK"], type: "public", note: "Pakistan holiday honoring poet-philosopher Allama Iqbal" },
   { date: "2026-11-11", name: "Veterans Day", countries: ["US"], type: "public", note: "US federal holiday" },
   { date: "2026-11-16", name: "Independence of Cartagena", countries: ["CO"], type: "public", note: "Colombia public holiday (moved to Monday)" },
   { date: "2026-11-20", name: "Revolution Day", countries: ["MX"], type: "public", note: "Mexico national holiday" },
   { date: "2026-11-26", name: "Thanksgiving", countries: ["US"], type: "public", note: "US federal holiday — many take Friday off too" },
-  { date: "2026-12-08", name: "Immaculate Conception", countries: ["CO","PE"], type: "public", note: "Public holiday in Colombia and Peru" },
+  { date: "2026-11-30", name: "Bonifacio Day", countries: ["PH"], type: "public", note: "Philippines national holiday honoring Andres Bonifacio, father of the Philippine Revolution" },
+  { date: "2026-12-08", name: "Immaculate Conception", countries: ["CO","PE","PH"], type: "public", note: "Public holiday in Colombia, Peru, and the Philippines" },
   { date: "2026-12-09", name: "Battle of Ayacucho", countries: ["PE"], type: "public", note: "Peru national holiday" },
-  { date: "2026-12-25", name: "Christmas / Quaid-e-Azam Day", countries: ["US","CO","MX","BO","PE","NG","PK"], type: "public", note: "Global holiday. In Pakistan, also Quaid-e-Azam Day (founders birthday). Great moment for all-team message!" },
-  { date: "2026-12-26", name: "Boxing Day", countries: ["NG"], type: "public", note: "Nigeria public holiday" },
+  { date: "2026-12-25", name: "Christmas / Quaid-e-Azam Day", countries: ["US","CO","MX","BO","PE","PK","PH","NG","JM"], type: "public", note: "Global holiday. In Pakistan, also Quaid-e-Azam Day (founder's birthday). Great moment for all-team message!" },
+  { date: "2026-12-26", name: "Boxing Day", countries: ["NG","JM"], type: "public", note: "Nigeria and Jamaica public holiday" },
+  { date: "2026-12-30", name: "Rizal Day", countries: ["PH"], type: "public", note: "Philippines national holiday honoring national hero José Rizal" },
 ];
 
-const fl = { US: "\u{1F1FA}\u{1F1F8}", CO: "\u{1F1E8}\u{1F1F4}", MX: "\u{1F1F2}\u{1F1FD}", BO: "\u{1F1E7}\u{1F1F4}", PE: "\u{1F1F5}\u{1F1EA}", NG: "\u{1F1F3}\u{1F1EC}", PK: "\u{1F1F5}\u{1F1F0}", ALL: "\u{1F30D}" };
-const nm = { US: "United States", CO: "Colombia", MX: "Mexico", BO: "Bolivia", PE: "Peru", NG: "Nigeria", PK: "Pakistan", ALL: "All Team" };
-const cl = { US: "#3B82F6", CO: "#F59E0B", MX: "#10B981", BO: "#EF4444", PE: "#8B5CF6", NG: "#06B6D4", PK: "#22C55E", ALL: "#6366F1" };
+const fl = { US: "\u{1F1FA}\u{1F1F8}", CO: "\u{1F1E8}\u{1F1F4}", MX: "\u{1F1F2}\u{1F1FD}", BO: "\u{1F1E7}\u{1F1F4}", PE: "\u{1F1F5}\u{1F1EA}", PK: "\u{1F1F5}\u{1F1F0}", PH: "\u{1F1F5}\u{1F1ED}", NG: "\u{1F1F3}\u{1F1EC}", JM: "\u{1F1EF}\u{1F1F2}", ALL: "\u{1F30D}" };
+const nm = { US: "United States", CO: "Colombia", MX: "Mexico", BO: "Bolivia", PE: "Peru", PK: "Pakistan", PH: "Philippines", NG: "Nigeria", JM: "Jamaica", ALL: "All Team" };
+const cl = { US: "#3B82F6", CO: "#F59E0B", MX: "#10B981", BO: "#EF4444", PE: "#8B5CF6", PK: "#22C55E", PH: "#DC2626", NG: "#06B6D4", JM: "#F97316", ALL: "#6366F1" };
 const mn = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const dn = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
@@ -133,7 +142,7 @@ function MonthGrid({ mi, filtered, today, onSelect, selectedDay }) {
 }
 
 export default function App() {
-  const [sel, setSel] = useState(["US","CO","MX","BO","PE","NG","PK","ALL"]);
+  const [sel, setSel] = useState(["US","CO","MX","BO","PE","PK","PH","NG","JM","ALL"]);
   const [mf, setMf] = useState("all");
   const [culOnly, setCulOnly] = useState(false);
   const [exp, setExp] = useState(null);
@@ -155,7 +164,7 @@ export default function App() {
   listF.forEach(h => { const m = mn[new Date(h.date + "T12:00:00").getMonth()]; if (!grouped[m]) grouped[m] = []; grouped[m].push(h); });
 
   const today = "2026-02-17";
-  const teams = { US: 8, CO: "7-8", MX: 1, BO: 1, PE: 1, NG: 1, PK: 4 };
+  const teams = { US: 11, CO: 5, PE: 3, PK: 4, PH: 1, NG: 1, BO: 1, MX: 1, JM: "1*" };
 
   const sdHols = sd ? filtered.filter(h => { const d = new Date(h.date + "T12:00:00"); return d.getMonth() === cm && d.getDate() === sd; }) : [];
 
@@ -166,7 +175,7 @@ export default function App() {
           <span style={{ fontSize: 28 }}>{"\u{1F4C5}"}</span>
           <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>Dripjobs Team Cultural Calendar 2026</h1>
         </div>
-        <p style={{ margin: "8px 0 0", fontSize: 13, opacity: 0.85 }}>Holidays & cultural observances across 7 countries &bull; {holidays.length} dates tracked</p>
+        <p style={{ margin: "8px 0 0", fontSize: 13, opacity: 0.85 }}>Holidays & cultural observances across 9 countries &bull; {holidays.length} dates tracked</p>
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16, padding: "12px 16px", background: "white", borderRadius: 10, border: "1px solid #E5E7EB" }}>
@@ -176,6 +185,7 @@ export default function App() {
             <span>{fl[c]}</span><span style={{ fontWeight: 600 }}>{n}</span><span style={{ color: "#9CA3AF" }}>{nm[c]}</span>
           </div>
         ))}
+        <div style={{ width: "100%", fontSize: 11, color: "#9CA3AF", fontStyle: "italic", marginTop: 2 }}>* Pending new hire</div>
       </div>
 
       <div style={{ background: "white", borderRadius: 10, padding: 16, marginBottom: 16, border: "1px solid #E5E7EB" }}>
@@ -322,7 +332,7 @@ export default function App() {
       <div style={{ marginTop: 16, background: "linear-gradient(135deg, #F0FDF4, #ECFDF5)", borderRadius: 10, padding: 16, border: "1px solid #BBF7D0" }}>
         <h3 style={{ margin: "0 0 8px", fontSize: 14, fontWeight: 700, color: "#166534" }}>{"\u{262A}\u{FE0F}"} Ramadan Awareness (approx. Feb 18 - Mar 20, 2026)</h3>
         <p style={{ margin: 0, fontSize: 13, color: "#15803D", lineHeight: 1.6 }}>
-          During Ramadan, your Pakistan dev team and Nigeria team member will be fasting dawn to sunset.
+          During Ramadan, your Pakistan dev team and Nigeria QA team member will be fasting dawn to sunset.
           Consider scheduling meetings outside fasting hours, being flexible on response times, and sending a warm acknowledgment.
         </p>
       </div>
@@ -332,9 +342,12 @@ export default function App() {
         <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 13, color: "#4B5563", lineHeight: 1.6 }}>
           <div>{fl.CO} <strong>Colombia has 18 public holidays</strong> — the most of any Dripjobs country. Many shift to Mondays (Ley Emiliani).</div>
           <div>{fl.PK} <strong>Islamic holidays shift annually</strong> — dates are approximate, confirmed by moon sighting. Verify with team.</div>
-          <div>{"\u{1F30D}"} <strong>May 1 (Labor Day)</strong> is observed everywhere except the US — plan for coverage gaps.</div>
+          <div>{"\u{1F30D}"} <strong>May 1 (Labor Day)</strong> is observed in most countries except the US and Jamaica — plan for coverage gaps.</div>
           <div>{fl.MX} <strong>Dia de los Muertos (Nov 1-2)</strong> is culturally essential in Mexico even though not a federal holiday.</div>
           <div>{fl.BO} <strong>Martes de Ch'alla</strong> and <strong>Aymara New Year</strong> reflect Bolivia's indigenous Andean traditions.</div>
+          <div>{fl.PH} <strong>Philippines has unique national holidays</strong> — EDSA Revolution, Ninoy Aquino Day, Bonifacio Day, and Rizal Day are all observed.</div>
+          <div>{fl.NG} <strong>Nigeria observes Islamic holidays</strong> — Eid al-Fitr, Eid al-Adha, and Eid Milad-un-Nabi dates shift annually based on moon sighting.</div>
+          <div>{fl.JM} <strong>Jamaica Emancipation Day (Aug 1)</strong> and <strong>Independence Day (Aug 6)</strong> are the most significant national holidays.</div>
           <div>{"\u{26A0}\u{FE0F}"} <strong>Contractor note:</strong> You cannot require contractors to take specific days off, but acknowledging local holidays builds trust and retention.</div>
         </div>
       </div>
